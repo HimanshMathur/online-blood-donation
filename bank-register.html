@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - LifeSaver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .password-container input {
+            width: 100%;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+        
+        .password-toggle-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+            font-size: 16px;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        .input-group .password-container {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Life<span>Saver</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about.html">About Us</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <div class="form-container">
+        <div class="form-glass">
+            <!-- Blood Bank/Hospital Registration Form -->
+            <div id="bank" class="tab-content">
+                <h2 class="form-title">Blood Bank/Hospital Registration</h2>
+                <form id="bankForm" aria-label="Blood Bank/Hospital Registration Form">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="bankName">Institution Name</label>
+                            <input type="text" id="bankName" required aria-required="true">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="bankType">Institution Type</label>
+                            <select id="bankType" required aria-required="true">
+                                <option value="">Select</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="blood-bank">Blood Bank</option>
+                                <option value="ngo">NGO</option>
+                                <option value="government">Government Center</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="bankEmail">Official Email</label>
+                            <input type="	email" id="bankEmail" required aria-required="true">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="bankPassword">Password</label>
+                            <div class="password-container">
+                                <input type="password" id="bankPassword" name="bankPassword" maxlength="8" required aria-required="true">
+                                <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                                    <i class="fas fa-eye" id="togglePasswordIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="bankPhone">Contact Number</label>
+                            <input type="tel" id="bankPhone" required aria-required="true">
+                        </div>
+                        
+                        <div class="input-group full-width">
+                            <label for="bankAddress">Full Address</label>
+                            <input type="text" id="bankAddress" required aria-required="true">
+                        </div>
+                        
+                        <div class="input-group full-width">
+                            <label for="licenseFile" class="license-upload">
+                                <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #ff2e63;"></i>
+                                <p>Upload License Certificate</p>
+                                <input type="file" id="licenseFile" accept=".pdf,.jpg,.png" required aria-required="true">
+                            </label>
+                        </div>
+                        
+                        <div class="input-group full-width" style="text-align: center;">
+                            <button type="submit" class="submit-btn">Register Institution</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bankForm = document.getElementById('bankForm');
+            if (bankForm) {
+                const passwordInput = bankForm.querySelector('#bankPassword');
+                const toggleButton = bankForm.querySelector('.password-toggle-btn');
+                const toggleIcon = bankForm.querySelector('#togglePasswordIcon');
+
+                if (passwordInput && toggleButton && toggleIcon) {
+                    toggleButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const isPassword = passwordInput.type === 'password';
+                        passwordInput.type = isPassword ? 'text' : 'password';
+                        toggleIcon.classList.toggle('fa-eye', !isPassword);
+                        toggleIcon.classList.toggle('fa-eye-slash', isPassword);
+                    });
+                } else {
+                    console.error('Password toggle elements not found in bank form');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

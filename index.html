@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeSaver - Blood Donation Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Life<span>Saver</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="#contact">Contact</a>
+            <a href = "#faq">FAQ</a>
+            <a href="login.html">Login</a>
+            
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your <span>Blood</span> Can Save <span>Three Lives</span></h1>
+            <p>Join thousands of heroes who donate blood and give someone a second chance at life.</p>
+            <div class="hero-buttons">
+                <a href="donor-register.html" class="btn">Donate Blood Now</a>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <img src="https://t3.ftcdn.net/jpg/03/09/20/22/360_F_309202280_CgsWoCAdLBe9INBvdwBKUkpaLEP4XNLa.jpg" 
+                 alt="Doctor collecting blood donation from smiling donor"
+                 class="donor-image">
+            <div class="blood-drop"></div>
+            <div class="blood-drop"></div>
+            <div class="blood-drop"></div>
+        </div>
+    </section>
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Who can donate blood?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Generally, donors must be 18-65 years old, weigh at least 50kg, and be in good health. Specific eligibility criteria are checked during registration.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How does the matching work?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our AI considers blood type compatibility, donor location, recent donation history, and health parameters to find the most suitable donors.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is my data secure?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we use industry-standard encryption and never share your data without consent. Hospitals only see necessary donor information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Health Street, Mumbai, Maharashtra 400001</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@lifesaver.org</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats-section">
+        <div class="stat-card">
+            <i class="fas fa-tint"></i>
+            <h3 class="counter" data-target="42">56</h3>
+            <p>Seconds between each blood unit needed</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <h3 class="counter" data-target="12000">12000</h3>
+            <p>Patients waiting for blood every day</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-heartbeat"></i>
+            <h3 class="counter" data-target="1">1</h3>
+            <p>Donation can save up to 3 lives</p>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <h2>Ready to Be a Hero?</h2>
+        <p>Just 30 minutes and 350ml of blood - your small step can change someone's life forever</p>
+        <a href="#" class="btn btn-pulse">Register Now</a>
+    </section>
+    
+    <div class="chatbot-btn" id="chatbotButton">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration - LifeSaver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Life<span>Saver</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about.html">About Us</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <div class="form-container">
+        <div class="form-glass">
+            <h2 class="form-title">Blood Donor Registration</h2>
+            
+            <form id="donorForm" aria-label="Blood Donor Registration Form">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="donorName">Full Name</label>
+                        <input type="text" id="donorName" required aria-required="true">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="donorEmail">Email</label>
+                        <input type="email" id="donorEmail" required aria-required="true">
+                    </div>
+                    <!-- Add this CSS to your style.css -->
+
+    
+    <!-- Add this CSS to your style.css -->
+<style>
+    .password-container {
+        position: relative;
+        width: 100%;
+    }
+    
+    .password-container input {
+        width: 100%;
+        padding-right: 40px;
+        box-sizing: border-box;
+    }
+    
+    .password-toggle-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #666;
+        font-size: 16px;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+    
+    .input-group .password-container {
+        margin-top: 5px;
+    }
+    </style>
+    
+    <!-- Modified HTML for the password field -->
+    <div class="input-group">
+        <label for="donorPassword">Password</label>
+        <div class="password-container">
+            <input type="password" id="donorPassword" name="donorPassword" maxlength = 8 required aria-required="true">
+            <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                <i class="fas fa-eye" id="togglePasswordIcon"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Add this JavaScript to your script.js -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const donorForm = document.getElementById('donorForm');
+        if (donorForm) {
+            const passwordInput = donorForm.querySelector('#donorPassword');
+            const toggleButton = donorForm.querySelector('.password-toggle-btn');
+            const toggleIcon = donorForm.querySelector('#togglePasswordIcon');
+    
+            if (passwordInput && toggleButton && toggleIcon) {
+                toggleButton.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent form submission
+                    const isPassword = passwordInput.type === 'password';
+                    passwordInput.type = isPassword ? 'text' : 'password';
+                    toggleIcon.classList.toggle('fa-eye', !isPassword);
+                    toggleIcon.classList.toggle('fa-eye-slash', isPassword);
+                });
+            } else {
+                console.error('Password toggle elements not found in donor form');
+            }
+        }
+    });
+    </script>
+                    <div class="input-group">
+                        <label for="donorPhone">Phone Number</label>
+                        <input type="tel" id="donorPhone" required aria-required="true">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="donorBlood">Blood Group</label>
+                        <select id="donorBlood" required aria-required="true">
+                            <option value="">Select</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group full-width">
+                        <label for="donorAddress">Full Address</label>
+                        <input type="text" id="donorAddress" required aria-required="true">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="donorDob">Date of Birth</label>
+                        <input type="date" id="donorDob" required aria-required="true">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="donorGender">Gender</label>
+                        <select id="donorGender" required aria-required="true">
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="height">Height (in cm)</label>
+                        <input type="number" id="height" name="height" min="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="weight">Weight (in Kg)</label>
+                        <input type="number" name="weight" min="0" required>
+                    </div>
+                    
+                    <div class="input-group full-width">
+                        <label for="donorHealth">Any health conditions we should know about?</label>
+                        <textarea id="donorHealth" rows="5"></textarea>
+                    </div>
+                    
+                    <div class="input-group full-width" style="text-align: center;">
+                        <button type="submit" class="submit-btn">Register as Donor</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script> <!-- Ensure correct path -->
+</body>
+</html>
